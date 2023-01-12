@@ -68,9 +68,9 @@ public class Labirynt {
      */
     public void paint(Graphics graphics) throws IOException {
         int[][] maze = getMaze(tab);
-        blok = ImageIO.read(new File("Resources/blok.png"));
-        zagadka = ImageIO.read(new File("Resources/zagadka.png"));
-        trawa = ImageIO.read(new File("Resources/trawa.png"));
+        blok = ImageIO.read(new File("/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/blok.png"));
+        zagadka = ImageIO.read(new File("/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/zagadka.png"));
+        trawa = ImageIO.read(new File("/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/trawa.png"));
 
         for (row = 0; row < rownumber; row++) {
             for (col = 0; col < colnumber; col++) {

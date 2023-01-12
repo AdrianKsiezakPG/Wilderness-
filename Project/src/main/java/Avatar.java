@@ -130,7 +130,7 @@ public class Avatar {
      */
     public void drawLife(Graphics graphics) throws IOException {
         for (int z = 0; z < life; z++) {
-            PNG_life[z] = ImageIO.read(new File("Resources/zycie.png"));
+            PNG_life[z] = ImageIO.read(new File("/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/zycie.png"));
             graphics.drawImage(PNG_life[z], 750 + (z * 45), 0, width, height, null);
 
             if (life == 2) {
@@ -198,6 +198,7 @@ public class Avatar {
          * Gdy gracz dostanie się do mety następuje zmiana poziomu na kolejny
          */
         if (x == 840 && y == 440) {
+
             nextLevel();
         }
 

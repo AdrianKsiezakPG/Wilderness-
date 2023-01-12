@@ -43,7 +43,7 @@ public class Game extends JPanel {
     /**
      * Zmienna przechowująca dany wygląd bohatera
      */
-    String avatarLook = "Resources/avatar1.png";
+    String avatarLook = "/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/avatar1.png";
     /**
      * zmienne przechowujące liczbę punktów i życia
      */
@@ -81,11 +81,11 @@ public class Game extends JPanel {
             }
         } else if (answer == JOptionPane.NO_OPTION) {
             if (points >= 50) {
-                if (avatarLook == "Resources/avatar1.png") {
-                    avatarLook = "Resources/avatar2.png";
+                if (avatarLook == "/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/avatar1.png") {
+                    avatarLook = "/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/avatar2.png";
                     points -= 50;
                     avatar.setPoints(points);
-                } else avatarLook = "Resources/avatar3.png";
+                } else avatarLook = "/Users/macbookpro/Desktop/git/Wilderness-/Project/Resources/avatar3.png";
             } else {
                 JOptionPane.showMessageDialog(null, "Nie wystarczająca liczba punktów!\nBrak akcji....");
             }
