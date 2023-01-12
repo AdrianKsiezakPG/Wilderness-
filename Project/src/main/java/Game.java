@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -182,6 +183,7 @@ public class Game extends JPanel {
      * @param args Standardowy argument z języka C
      */
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         JOptionPane.showMessageDialog(null, "Welcome to the game Wilderness! Let's start!");
         JFrame myWindow = new JFrame("Wilderness");
         Game game = new Game();
@@ -203,12 +205,35 @@ public class Game extends JPanel {
             myWindow.repaint();
 
             /**
-             * Po ukończeniu 3 poziomów gracz wygrywa grę
+             * Po ukończeniu 3 poziomów wynik gracza zapisywany jest do pliku o nazwie "LevelScores". Gracz konczy grę
              */
             if (getLevel() > 3) {
+
+                long finish = System.currentTimeMillis();
+                double timeElapsed = (finish - start) / 1000.0;
+                System.out.println(timeElapsed);
+                writeToFile("Result.txt", timeElapsed);
+
                 JOptionPane.showMessageDialog(null, "YOU WIN");
                 System.exit(0);
             }
+        }
+    }
+
+    /**
+     * Metoda zapisujaca do pliku wynik gry
+     *
+     * @param fileName nazwa pliku do zapisu
+     * @param s        wynik do zapisu
+     */
+    public static void writeToFile(String fileName, double s) {
+        try {
+            FileWriter myWriter = new FileWriter(fileName);
+            myWriter.write("Your result during game: " + s);
+            myWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
 }
